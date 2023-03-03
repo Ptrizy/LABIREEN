@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
               style: GoogleFonts.poppins(
                   fontSize: 34,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 248, 250, 252)),
+                  color: Color.fromARGB(255, 15, 23, 42)),
             ),
           ),
           SizedBox(
@@ -38,71 +38,86 @@ class LoginPage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 57,
-                    ),
-                    Text(
-                      "Nama",
-                      style: GoogleFonts.poppins(fontSize: 14),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 37,
                         ),
-                        hintText: "Nama",
-                      ),
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    Text(
-                      "Email",
-                      style: GoogleFonts.poppins(fontSize: 14),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Nama",
+                            style: GoogleFonts.poppins(fontSize: 14),
+                          ),
                         ),
-                        hintText: "Email",
-                      ),
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    Text(
-                      "Password",
-                      style: GoogleFonts.poppins(fontSize: 14),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.white),
+                        TextField(
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            hintText: "Nama",
+                          ),
                         ),
-                        hintText: "Nama",
-                      ),
+                        SizedBox(
+                          height: 32,
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Email",
+                            style: GoogleFonts.poppins(fontSize: 14),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            hintText: "Email",
+                          ),
+                        ),
+                        SizedBox(
+                          height: 32,
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Password",
+                            style: GoogleFonts.poppins(fontSize: 14),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.fromLTRB(23, 0, 0, 0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            hintText: "Password",
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: Color.fromARGB(255, 245, 245, 245),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(80, 0, 0, 0),
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                    )
-                  ],
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Color.fromARGB(255, 245, 245, 245),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(40, 0, 0, 0),
+                        blurRadius: 5,
+                        spreadRadius: 4,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
