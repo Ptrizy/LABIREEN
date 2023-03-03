@@ -28,9 +28,9 @@ class LoginPage extends StatelessWidget {
             child: Text(
               "Sign Up",
               style: GoogleFonts.poppins(
-                fontSize: 34,
-                fontWeight: FontWeight.bold,
-              ),
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 248, 250, 252)),
             ),
           ),
           SizedBox(

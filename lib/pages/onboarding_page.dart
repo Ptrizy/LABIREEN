@@ -37,13 +37,24 @@ class OnboardingPage extends StatelessWidget {
           ],
           done: Text(
             'Next',
-            style:
-                GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(
+                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           onDone: () => goToLoginPage(context),
           showSkipButton: true,
-          skip: Text('Skip'),
-          next: Icon(Icons.arrow_forward_rounded),
+          skip: Text(
+            'Skip',
+            style: GoogleFonts.poppins(
+                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
+          next: Icon(
+            Icons.arrow_forward_rounded,
+            color: Colors.white,
+          ),
+          dotsDecorator: dotsDecorator(),
+          globalBackgroundColor: Color.fromARGB(255, 236, 148, 85),
+          skipOrBackFlex: 0,
+          nextFlex: 0,
         ),
       );
 }
@@ -65,3 +76,12 @@ PageDecoration pageDecoration() => PageDecoration(
     imagePadding: EdgeInsets.all(24),
     bodyPadding: EdgeInsets.all(16).copyWith(bottom: 0),
     pageColor: Color.fromARGB(255, 236, 148, 85));
+
+DotsDecorator dotsDecorator() => DotsDecorator(
+      color: Colors.white,
+      activeColor: Colors.grey.shade300,
+      size: Size(10, 10),
+      activeSize: Size(20, 10),
+      activeShape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    );
