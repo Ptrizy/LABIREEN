@@ -12,10 +12,13 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            fixedSize: MaterialStateProperty.all<Size>(Size(40, 20))),
         onPressed: onClicked,
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: Colors.black, fontSize: 16),
         ),
       );
 }
