@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:labireen/pages/onboarding_page.dart';
-import 'pages/login_page.dart';
+import 'pages/sign_up_page.dart';
 
 void main() {
   runApp(MyApp());

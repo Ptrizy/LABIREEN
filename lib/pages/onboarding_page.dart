@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:labireen/pages/login_page.dart';
+import 'package:labireen/pages/sign_up_page.dart';
 import 'package:labireen/widget/onboarding_page/button_onboardpage.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -27,20 +28,39 @@ class OnboardingPage extends StatelessWidget {
                 image: buildImage('assets/logo_putih.png'),
                 decoration: pageDecoration()),
             PageViewModel(
-                title: 'Lorem Ipsum',
-                body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-                image: buildImage('assets/logo_putih.png'),
-                decoration: pageDecoration(),
-                footer: ButtonWidget(
-                    text: 'Pesan Sekarang',
-                    onClicked: () => goToLoginPage(context)))
+              title: 'Order Online',
+              body:
+                  'Order makananmu di kantin FILKOM secara online dan pantau terus status pemesananmu!',
+              image: buildImage('assets/onboarding3.png'),
+              decoration: pageDecoration(),
+              footer: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // ButtonTheme(
+                  //   minWidth: 16,
+                  //   height: 5,
+                  //   child: ButtonWidget(
+                  //     text: 'Sign Up',
+                  //     onClicked: () => goToSignUpPage(context),
+                  //   ),
+                  // ),
+                  ButtonTheme(
+                    minWidth: 15,
+                    height: 5,
+                    child: ButtonWidget(
+                        text: 'Log In',
+                        onClicked: () => goToLoginPage(context)),
+                  )
+                ],
+              ),
+            )
           ],
           done: Text(
             'Next',
             style: GoogleFonts.poppins(
                 fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
           ),
-          onDone: () => goToLoginPage(context),
+          onDone: () => goToSignUpPage(context),
           showSkipButton: true,
           skip: Text(
             'Skip',
@@ -58,6 +78,9 @@ class OnboardingPage extends StatelessWidget {
         ),
       );
 }
+
+void goToSignUpPage(context) => Navigator.of(context)
+    .pushReplacement(MaterialPageRoute(builder: (_) => SignUpPage()));
 
 void goToLoginPage(context) => Navigator.of(context)
     .pushReplacement(MaterialPageRoute(builder: (_) => LoginPage()));

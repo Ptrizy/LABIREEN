@@ -1,14 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:labireen/pages/reset_password.dart';
-import 'package:labireen/pages/sign_up_page.dart';
+import 'package:labireen/pages/login_page.dart';
 import 'package:labireen/widget/sign_up_page/button_login.dart';
 import 'package:labireen/widget/sign_up_page/google_button_login.dart';
 import 'package:labireen/widget/sign_up_page/text_field_login.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  SignUpPage({super.key});
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
@@ -34,7 +33,7 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
             child: Text(
-              "Log In",
+              "Sign Up",
               style: GoogleFonts.poppins(
                   fontSize: 34,
                   fontWeight: FontWeight.bold,
@@ -56,6 +55,26 @@ class LoginPage extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 37,
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Nama",
+                            style: GoogleFonts.poppins(
+                                fontSize: 14, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFieldLogin(
+                          controller: nameController,
+                          text: 'Nama',
+                          textInputType: TextInputType.name,
+                          obscure: false,
+                        ),
+                        SizedBox(
+                          height: 24,
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -93,29 +112,10 @@ class LoginPage extends StatelessWidget {
                             textInputType: TextInputType.visiblePassword,
                             obscure: true),
                         SizedBox(
-                          height: 12,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ResetPassPage()));
-                          },
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Lupa password?",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 14, fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 24,
+                          height: 30,
                         ),
                         ButtonLogin(
-                          text: 'Masuk',
+                          text: 'Daftar',
                           onClicked: () {/*masih kosong */},
                         ),
                         SizedBox(
@@ -123,13 +123,13 @@ class LoginPage extends StatelessWidget {
                         ),
                         RichText(
                           text: TextSpan(
-                            text: "Belum punya akun? ",
+                            text: "Sudah punya akun? ",
                             style: GoogleFonts.poppins(
                                 color: Color.fromARGB(255, 197, 95, 22),
                                 fontSize: 11),
                             children: <TextSpan>[
                               TextSpan(
-                                  text: "\Sign Up\ ",
+                                  text: "\Log In\ ",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -139,13 +139,13 @@ class LoginPage extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  SignUpPage()));
+                                                  LoginPage()));
                                     }),
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 76,
+                          height: 17,
                         ),
                         Text(
                           'atau',
@@ -154,7 +154,7 @@ class LoginPage extends StatelessWidget {
                               color: Color.fromARGB(255, 100, 116, 139)),
                         ),
                         SizedBox(
-                          height: 12,
+                          height: 17,
                         ),
                         ButtonGoogle(onClicked: () {/*masih kosong*/})
                       ],
