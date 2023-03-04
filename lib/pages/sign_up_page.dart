@@ -10,6 +10,7 @@ class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +108,7 @@ class SignUpPage extends StatelessWidget {
                           height: 8,
                         ),
                         TextFieldLogin(
-                            controller: nameController,
+                            controller: passwordController,
                             text: 'Password',
                             textInputType: TextInputType.visiblePassword,
                             obscure: true),
