@@ -31,14 +31,3 @@ class ButtonLogin extends StatelessWidget {
     );
   }
 }
-
-
-// child: Container(
-//         alignment: Alignment.center,
-//         height: 50,
-//         decoration: BoxDecoration(
-//             color: Color.fromARGB(255, 236, 148, 85),
-//             borderRadius: BorderRadius.circular(20),
-//             boxShadow: [
-//               BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 7)
-//             ]),

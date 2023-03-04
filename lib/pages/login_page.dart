@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:labireen/pages/home_page_screens/home_page.dart';
 import 'package:labireen/pages/reset_password.dart';
 import 'package:labireen/pages/sign_up_page.dart';
 import 'package:labireen/widget/sign_up_page/button_login.dart';
@@ -116,7 +117,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         ButtonLogin(
                           text: 'Masuk',
-                          onClicked: () {/*masih kosong */},
+                          onClicked: () => goToHomePage(context),
                         ),
                         SizedBox(
                           height: 12,
@@ -156,7 +157,7 @@ class LoginPage extends StatelessWidget {
                         SizedBox(
                           height: 12,
                         ),
-                        ButtonGoogle(onClicked: () {/*masih kosong*/})
+                        ButtonGoogle(onClicked: () {})
                       ],
                     ),
                   ),
@@ -180,3 +181,6 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+void goToHomePage(context) => Navigator.of(context)
+    .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));

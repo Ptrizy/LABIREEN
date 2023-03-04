@@ -9,73 +9,70 @@ class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
 
   @override
-  Widget build(BuildContext context) => SafeArea(
-        child: IntroductionScreen(
-          pages: [
-            PageViewModel(
-                title: 'Lorem Ipsum',
-                body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-                image: buildImage('assets/logo_putih.png'),
-                decoration: pageDecoration()),
-            PageViewModel(
-                title: 'Lorem Ipsum',
-                body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-                image: buildImage('assets/logo_putih.png'),
-                decoration: pageDecoration()),
-            PageViewModel(
-                title: 'Lorem Ipsum',
-                body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-                image: buildImage('assets/logo_putih.png'),
-                decoration: pageDecoration()),
-            PageViewModel(
-              title: 'Order Online',
-              body:
-                  'Order makananmu di kantin FILKOM secara online dan pantau terus status pemesananmu!',
-              image: buildImage('assets/onboarding3.png'),
-              decoration: pageDecoration(),
-              footer: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // ButtonTheme(
-                  //   minWidth: 16,
-                  //   height: 5,
-                  //   child: ButtonWidget(
-                  //     text: 'Sign Up',
-                  //     onClicked: () => goToSignUpPage(context),
-                  //   ),
-                  // ),
-                  ButtonTheme(
-                    minWidth: 15,
-                    height: 5,
-                    child: ButtonWidget(
-                        text: 'Log In',
-                        onClicked: () => goToLoginPage(context)),
-                  )
-                ],
-              ),
-            )
-          ],
-          done: Text(
-            'Next',
-            style: GoogleFonts.poppins(
-                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-          onDone: () => goToSignUpPage(context),
-          showSkipButton: true,
-          skip: Text(
-            'Skip',
-            style: GoogleFonts.poppins(
-                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-          next: Icon(
-            Icons.arrow_forward_rounded,
-            color: Colors.white,
-          ),
-          dotsDecorator: dotsDecorator(),
-          globalBackgroundColor: Color.fromARGB(255, 236, 148, 85),
-          skipOrBackFlex: 0,
-          nextFlex: 0,
+  Widget build(BuildContext context) => IntroductionScreen(
+        pages: [
+          PageViewModel(
+              title: 'Lorem Ipsum',
+              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
+              image: buildImage('assets/logo_putih.png'),
+              decoration: pageDecoration()),
+          PageViewModel(
+              title: 'Lorem Ipsum',
+              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
+              image: buildImage('assets/logo_putih.png'),
+              decoration: pageDecoration()),
+          PageViewModel(
+              title: 'Lorem Ipsum',
+              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
+              image: buildImage('assets/logo_putih.png'),
+              decoration: pageDecoration()),
+          PageViewModel(
+            title: 'Order Online',
+            body:
+                'Order makananmu di kantin FILKOM secara online dan pantau terus status pemesananmu!',
+            image: buildImage('assets/onboarding3.png'),
+            decoration: pageDecoration(),
+            footer: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // ButtonTheme(
+                //   minWidth: 16,
+                //   height: 5,
+                //   child: ButtonWidget(
+                //     text: 'Sign Up',
+                //     onClicked: () => goToSignUpPage(context),
+                //   ),
+                // ),
+                ButtonTheme(
+                  minWidth: 15,
+                  height: 5,
+                  child: ButtonWidget(
+                      text: 'Log In', onClicked: () => goToLoginPage(context)),
+                )
+              ],
+            ),
+          )
+        ],
+        done: Text(
+          'Daftar',
+          style: GoogleFonts.poppins(
+              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        onDone: () => goToSignUpPage(context),
+        showSkipButton: true,
+        skip: Text(
+          'Skip',
+          style: GoogleFonts.poppins(
+              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        next: Icon(
+          Icons.arrow_forward_rounded,
+          color: Colors.white,
+        ),
+        dotsDecorator: dotsDecorator(),
+        globalBackgroundColor: Color.fromARGB(255, 236, 148, 85),
+        skipOrBackFlex: 0,
+        nextFlex: 0,
       );
 }
 

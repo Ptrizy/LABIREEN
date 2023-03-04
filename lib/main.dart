@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:labireen/pages/onboarding_page.dart';
-import 'pages/sign_up_page.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark));
   runApp(MyApp());
 }
 
