@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:labireen/pages/detail_daftar.dart';
+import 'package:labireen/pages/detail_menu_page.dart';
 import 'package:labireen/pages/login_page.dart';
 import 'package:labireen/widget/sign_up_page/button_login.dart';
 import 'package:labireen/widget/sign_up_page/google_button_login.dart';
@@ -117,7 +119,9 @@ class SignUpPage extends StatelessWidget {
                         ),
                         ButtonLogin(
                           text: 'Daftar',
-                          onClicked: () {/*masih kosong */},
+                          onClicked: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDaftar())),
                         ),
                         SizedBox(
                           height: 12,

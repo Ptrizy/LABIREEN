@@ -29,9 +29,26 @@ class _RiwayatPageState extends State<RiwayatPage> {
                           fontSize: 22,
                           fontWeight: FontWeight.w700,
                           color: Color.fromARGB(255, 15, 23, 42)),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Hari ini",
+                      style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
                     )
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 12,
+                ),
               ],
             ),
           ),
