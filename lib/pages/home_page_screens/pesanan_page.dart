@@ -18,7 +18,7 @@ class _PesananPageState extends State<PesananPage> {
         children: [
           HeadOfThreePage(),
           Padding(
-            padding: EdgeInsets.fromLTRB(16, 38, 15, 0),
+            padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
             child: Column(
               children: [
                 Row(
@@ -31,7 +31,10 @@ class _PesananPageState extends State<PesananPage> {
                           color: Color.fromARGB(255, 15, 23, 42)),
                     )
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 22,
+                ),
               ],
             ),
           ),

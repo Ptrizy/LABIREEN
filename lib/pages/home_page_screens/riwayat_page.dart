@@ -18,7 +18,7 @@ class _RiwayatPageState extends State<RiwayatPage> {
         children: [
           HeadOfThreePage(),
           Padding(
-            padding: EdgeInsets.fromLTRB(16, 38, 15, 0),
+            padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
             child: Column(
               children: [
                 Row(

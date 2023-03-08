@@ -75,7 +75,7 @@ class LoginPage extends StatelessWidget {
                             textInputType: TextInputType.emailAddress,
                             obscure: false),
                         SizedBox(
-                          height: 24,
+                          height: 12,
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -113,7 +113,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 24,
+                          height: 16,
                         ),
                         ButtonLogin(
                           text: 'Masuk',

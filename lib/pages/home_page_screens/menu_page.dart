@@ -21,7 +21,7 @@ class _MenuPageState extends State<MenuPage> {
           children: [
             HeadOfThreePage(),
             Padding(
-              padding: EdgeInsets.fromLTRB(16, 38, 15, 0),
+              padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
               child: Column(
                 children: [
                   Row(
@@ -38,27 +38,35 @@ class _MenuPageState extends State<MenuPage> {
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    children: [
-                      TabMenuPage(textPath: "Bu Ridok"),
-                      SizedBox(
-                        width: 11,
-                      ),
-                      TabMenuPage(textPath: "Lalapan Mbak Eli"),
-                      SizedBox(
-                        width: 11,
-                      ),
-                      TabMenuPage(textPath: "Amazing Mie"),
-                      SizedBox(
-                        width: 11,
-                      ),
-                      // TabMenuPage(textPath: "Warung Mimin"),
-                      // SizedBox(
-                      //   width: 11,
-                      // ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        TabMenuPage(textPath: "Bu Ridok"),
+                        SizedBox(
+                          width: 11,
+                        ),
+                        TabMenuPage(textPath: "Lalapan Mbak Eli"),
+                        SizedBox(
+                          width: 11,
+                        ),
+                        TabMenuPage(textPath: "Amazing Mie"),
+                        SizedBox(
+                          width: 11,
+                        ),
+                        TabMenuPage(textPath: "Warung Mimin"),
+                        SizedBox(
+                          width: 11,
+                        ),
+                      ],
+                    ),
                   ),
-                  MenuItem()
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height - 310,
+                    child: ListView(
+                      children: [MenuItem()],
+                    ),
+                  )
                 ],
               ),
             ),

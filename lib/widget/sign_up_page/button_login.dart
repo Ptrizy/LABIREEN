@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:labireen/pages/receipt_page.dart';
 
 class ButtonLogin extends StatelessWidget {
   const ButtonLogin({super.key, required this.text, required this.onClicked});

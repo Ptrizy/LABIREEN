@@ -13,6 +13,8 @@ class SignUpPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController ulangiPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +79,7 @@ class SignUpPage extends StatelessWidget {
                           obscure: false,
                         ),
                         SizedBox(
-                          height: 24,
+                          height: 12,
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -88,7 +90,7 @@ class SignUpPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 12,
                         ),
                         TextFieldLogin(
                             controller: emailController,
@@ -96,7 +98,7 @@ class SignUpPage extends StatelessWidget {
                             textInputType: TextInputType.emailAddress,
                             obscure: false),
                         SizedBox(
-                          height: 24,
+                          height: 14,
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -115,7 +117,26 @@ class SignUpPage extends StatelessWidget {
                             textInputType: TextInputType.visiblePassword,
                             obscure: true),
                         SizedBox(
-                          height: 30,
+                          height: 12,
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Ulangi password",
+                            style: GoogleFonts.poppins(
+                                fontSize: 14, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFieldLogin(
+                            controller: ulangiPasswordController,
+                            text: 'Ketik ulang password',
+                            textInputType: TextInputType.visiblePassword,
+                            obscure: true),
+                        SizedBox(
+                          height: 20,
                         ),
                         ButtonLogin(
                           text: 'Daftar',
