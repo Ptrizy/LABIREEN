@@ -11,7 +11,6 @@ class QrisPage extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 251, 247, 244),
         body: Column(
           children: [
-            HeadOfThreePage(),
             Center(
               child: ElevatedButton(
                   style: ButtonStyle(

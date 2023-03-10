@@ -356,8 +356,97 @@ class _ReceiptPageState extends State<ReceiptPage> {
                           MaterialStateProperty.all<Size>(Size(362, 62)),
                     ),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => QrisPage()));
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Pengingat!',
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w700,
+                                          color:
+                                              Color.fromARGB(255, 192, 38, 38)),
+                                    ),
+                                  ],
+                                ),
+                                content: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Pastikan pesananmu sudah sesuai\n sebelum melakukan pembayaran',
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  OutlinedButton(
+                                      style: ButtonStyle(
+                                        shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        minimumSize:
+                                            MaterialStateProperty.all<Size>(
+                                                Size(144, 49)),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ReceiptPage()));
+                                      },
+                                      child: Text(
+                                        'Periksa kembali',
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromARGB(
+                                                255, 15, 23, 42)),
+                                      )),
+                                  ElevatedButton(
+                                      style: ButtonStyle(
+                                          shape: MaterialStateProperty.all<
+                                              RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                            ),
+                                          ),
+                                          minimumSize:
+                                              MaterialStateProperty.all<Size>(
+                                                  Size(144, 49)),
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Color.fromARGB(
+                                                      255, 217, 62, 62))),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    QrisPage()));
+                                      },
+                                      child: Text(
+                                        'Oke',
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      ))
+                                ],
+                              ));
                     },
                     child: Text(
                       'Lanjutkan pembayaran',

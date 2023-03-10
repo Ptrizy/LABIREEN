@@ -33,15 +33,12 @@ class MenuItem extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              margin: EdgeInsets.fromLTRB(18.5, 20, 18.5, 8),
-                              child: Image.asset(
-                                'assets/ayam_lingkar.png',
-                                height: 100,
-                                width: 105,
-                              ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(18.5, 20, 18.5, 8),
+                            child: Image.asset(
+                              'assets/ayam_lingkar.png',
+                              height: 100,
+                              width: 105,
                             ),
                           ),
                         ],
