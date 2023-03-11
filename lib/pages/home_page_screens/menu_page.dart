@@ -62,7 +62,7 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height - 310,
+                    height: MediaQuery.of(context).size.height - 300,
                     child: ListView(
                       children: [MenuItem()],
                     ),

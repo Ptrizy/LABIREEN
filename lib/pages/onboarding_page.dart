@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -12,65 +13,96 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) => IntroductionScreen(
         pages: [
           PageViewModel(
-              title: 'Lorem Ipsum',
-              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-              image: buildImage('assets/logo_putih.png'),
+              title: 'Order online',
+              body: 'Order makanan mu di kantin FILKOM secara online!',
+              image: buildImage('assets/onboarding1.png'),
               decoration: pageDecoration()),
           PageViewModel(
-              title: 'Lorem Ipsum',
-              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-              image: buildImage('assets/logo_putih.png'),
+              title: 'Status pemesanan jelas',
+              body: 'Ketahui nomor antrian dan pantau terus status pemesananmu',
+              image: buildImage('assets/order.png'),
               decoration: pageDecoration()),
           PageViewModel(
-              title: 'Lorem Ipsum',
-              body: 'Ayo pesan makanan mu di kantin FILKOM secara online!',
-              image: buildImage('assets/logo_putih.png'),
-              decoration: pageDecoration()),
-          PageViewModel(
-            title: 'Order Online',
-            body:
-                'Order makananmu di kantin FILKOM secara online dan pantau terus status pemesananmu!',
-            image: buildImage('assets/onboarding3.png'),
-            decoration: pageDecoration(),
-            footer: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            title: '',
+            body: '',
+            image: buildImage('assets/_splash.png'),
+            decoration: PageDecoration(
+              pageColor: Color.fromARGB(255, 251, 247, 244),
+              imageFlex: 3,
+              imagePadding: EdgeInsets.only(top: 80),
+            ),
+            footer: Column(
               children: [
-                // ButtonTheme(
-                //   minWidth: 16,
-                //   height: 5,
-                //   child: ButtonWidget(
-                //     text: 'Sign Up',
-                //     onClicked: () => goToSignUpPage(context),
-                //   ),
-                // ),
-                ButtonTheme(
-                  minWidth: 15,
-                  height: 5,
-                  child: ButtonWidget(
-                      text: 'Log In', onClicked: () => goToLoginPage(context)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ButtonTheme(
+                      minWidth: 16,
+                      height: 5,
+                      child: ButtonWidget(
+                        text: 'Sign Up',
+                        onClicked: () => goToSignUpPage(context),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: "Sudah punya akun? ",
+                        style: GoogleFonts.poppins(
+                            color: Color.fromARGB(255, 197, 95, 22),
+                            fontSize: 11),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: "\Log In\ ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginPage()));
+                                }),
+                        ],
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),
-          )
+          ),
         ],
         done: Text(
-          'Daftar',
+          'Selesai',
           style: GoogleFonts.poppins(
-              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 231, 119, 40)),
         ),
-        onDone: () => goToSignUpPage(context),
+        onDone: () {},
+        showDoneButton: true,
         showSkipButton: true,
         skip: Text(
           'Skip',
           style: GoogleFonts.poppins(
-              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 231, 119, 40)),
         ),
         next: Icon(
           Icons.arrow_forward_rounded,
-          color: Colors.white,
+          color: Color.fromARGB(255, 231, 119, 40),
         ),
         dotsDecorator: dotsDecorator(),
-        globalBackgroundColor: Color.fromARGB(255, 236, 148, 85),
+        globalBackgroundColor: Color.fromARGB(255, 251, 247, 244),
         skipOrBackFlex: 0,
         nextFlex: 0,
       );
@@ -78,9 +110,6 @@ class OnboardingPage extends StatelessWidget {
 
 void goToSignUpPage(context) => Navigator.of(context)
     .pushReplacement(MaterialPageRoute(builder: (_) => SignUpPage()));
-
-void goToLoginPage(context) => Navigator.of(context)
-    .pushReplacement(MaterialPageRoute(builder: (_) => LoginPage()));
 
 Widget buildImage(String path) => Center(
       child: Image.asset(
@@ -90,16 +119,20 @@ Widget buildImage(String path) => Center(
     );
 
 PageDecoration pageDecoration() => PageDecoration(
-    titleTextStyle:
-        GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.bold),
-    bodyTextStyle: GoogleFonts.poppins(fontSize: 20),
-    imagePadding: EdgeInsets.all(24),
-    bodyPadding: EdgeInsets.all(16).copyWith(bottom: 0),
-    pageColor: Color.fromARGB(255, 236, 148, 85));
+    titleTextStyle: GoogleFonts.poppins(
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+        color: Color.fromARGB(255, 231, 119, 40)),
+    bodyTextStyle:
+        GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w500),
+    titlePadding: EdgeInsets.only(top: 70),
+    imagePadding: EdgeInsets.only(top: 155),
+    bodyPadding: EdgeInsets.all(10),
+    pageColor: Color.fromARGB(255, 251, 247, 244));
 
 DotsDecorator dotsDecorator() => DotsDecorator(
-      color: Colors.white,
-      activeColor: Colors.grey.shade300,
+      color: Color.fromARGB(255, 203, 213, 225),
+      activeColor: Color.fromARGB(255, 236, 148, 85),
       size: Size(10, 10),
       activeSize: Size(20, 10),
       activeShape:

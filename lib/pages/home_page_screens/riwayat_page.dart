@@ -31,46 +31,47 @@ class _RiwayatPageState extends State<RiwayatPage> {
           HeadOfThreePage(),
           Padding(
             padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
-            child: Expanded(
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Riwayat",
-                        style: GoogleFonts.poppins(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromARGB(255, 15, 23, 42)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Hari ini",
-                        style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  ListView.builder(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "Riwayat",
+                      style: GoogleFonts.poppins(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromARGB(255, 15, 23, 42)),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Hari ini",
+                      style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 280,
+                  child: ListView.builder(
                       itemCount: _riwayat.length,
                       itemBuilder: ((context, index) {
                         return RiwayatItem(
                           jumlahRiwayat: _riwayat[index],
                         );
                       })),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

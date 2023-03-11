@@ -47,13 +47,16 @@ class _PesananPageState extends State<PesananPage> {
               SizedBox(
                 height: 22,
               ),
-              // ListView.builder(
-              //         itemCount: _antrianPesanan.length,
-              //         itemBuilder: (context, index) {
-              //           return PesananItem(
-              //             antrianPesanan: _antrianPesanan[index].toString(),
-              //           );
-              //         })
+              SizedBox(
+                height: MediaQuery.of(context).size.height - 260,
+                child: ListView.builder(
+                    itemCount: _antrianPesanan.length,
+                    itemBuilder: (context, index) {
+                      return PesananItem(
+                        antrianPesanan: _antrianPesanan[index].toString(),
+                      );
+                    }),
+              ),
             ],
           ),
         )

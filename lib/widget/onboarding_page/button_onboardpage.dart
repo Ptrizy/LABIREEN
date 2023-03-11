@@ -15,21 +15,23 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) => Center(
           child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+          backgroundColor: MaterialStateProperty.all<Color>(
+              Color.fromARGB(255, 231, 119, 40)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(6),
-          shadowColor: MaterialStateProperty.all<Color>(Colors.grey.shade300),
-          minimumSize: MaterialStateProperty.all<Size>(Size(250, 50)),
+          elevation: MaterialStateProperty.all<double>(0),
+          minimumSize: MaterialStateProperty.all<Size>(Size(330, 57)),
         ),
         onPressed: onClicked,
         child: Text(
           text,
           style: GoogleFonts.poppins(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+              color: Color.fromARGB(255, 248, 250, 252),
+              fontSize: 18,
+              fontWeight: FontWeight.bold),
         ),
       ));
 }

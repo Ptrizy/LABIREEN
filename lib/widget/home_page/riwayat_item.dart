@@ -14,7 +14,7 @@ class RiwayatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: 4),
       child: Container(
         width: 361,
         height: 150,
