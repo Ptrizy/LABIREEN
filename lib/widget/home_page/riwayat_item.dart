@@ -69,6 +69,9 @@ class RiwayatItem extends StatelessWidget {
                         )
                       ],
                     ),
+                    SizedBox(
+                      height: 3,
+                    ),
                     Row(children: [
                       ElevatedButton(
                         onPressed: () {
@@ -83,7 +86,7 @@ class RiwayatItem extends StatelessWidget {
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
                         ),

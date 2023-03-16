@@ -1,16 +1,38 @@
+import 'dart:typed_data';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-// import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:labireen/pages/home_page_screens/home_page.dart';
+import 'package:labireen/pages/home_page_screens/pesanan_page.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';.
 
-class QrisPage extends StatelessWidget {
+class QrisPage extends StatefulWidget {
   const QrisPage({super.key, required this.qrCodeData});
   final String qrCodeData;
 
   @override
+  State<QrisPage> createState() => _QrisPageState();
+}
+
+class _QrisPageState extends State<QrisPage> {
+  @override
   Widget build(BuildContext context) {
     String url =
-        'https://api.qrserver.com/v1/create-qr-code/?size=225x225&data=$qrCodeData';
+        'https://api.qrserver.com/v1/create-qr-code/?size=225x225&data=${widget.qrCodeData}';
+
+    _save() async {
+      var response = await Dio()
+          .get(url, options: Options(responseType: ResponseType.bytes));
+      final result = await ImageGallerySaver.saveImage(
+          Uint8List.fromList(response.data),
+          quality: 60,
+          name: "Qris");
+      print(result);
+    }
+
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 251, 247, 244),
         body: Center(
@@ -68,7 +90,7 @@ class QrisPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Simpan  halaman ini dan lakukan pembayaran\n                         melalui m-bankingmu.',
+                    'Simpan  halaman ini dan lakukan pembayaran\n                      melalui m-bankingmu.',
                     style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -94,6 +116,7 @@ class QrisPage extends StatelessWidget {
                           MaterialStateProperty.all<Size>(Size(362, 62)),
                     ),
                     onPressed: () async {
+                      await _save();
                       showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
@@ -103,11 +126,11 @@ class QrisPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Pengingat!',
+                                'Download berhasil!',
                                 style: GoogleFonts.poppins(
                                     fontSize: 22,
                                     fontWeight: FontWeight.w700,
-                                    color: Color.fromARGB(255, 192, 38, 38)),
+                                    color: Color.fromARGB(255, 91, 195, 55)),
                               ),
                             ],
                           ),
@@ -115,7 +138,7 @@ class QrisPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Pastikan pesananmu sudah sesuai\n sebelum melakukan pembayaran',
+                                'Silahkan lanjutkan pembayaran di \nm-bankingmu dengan QRIS ini ya!',
                                 style: GoogleFonts.poppins(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
@@ -124,61 +147,36 @@ class QrisPage extends StatelessWidget {
                             ],
                           ),
                           actions: [
-                            OutlinedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
+                            Center(
+                              child: ElevatedButton(
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                      ),
+                                      minimumSize:
+                                          MaterialStateProperty.all<Size>(
+                                              Size(144, 49)),
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                              Color.fromARGB(
+                                                  255, 147, 217, 120))),
+                                  child: Text(
+                                    'Oke',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
                                   ),
-                                ),
-                                minimumSize: MaterialStateProperty.all<Size>(
-                                    Size(144, 49)),
-                              ),
-                              child: Text(
-                                'Batal',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color.fromARGB(255, 15, 23, 42)),
-                              ),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                  minimumSize: MaterialStateProperty.all<Size>(
-                                      Size(144, 49)),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Color.fromARGB(255, 217, 62, 62))),
-                              child: Text(
-                                'Download',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
-                              ),
-                              onPressed: () {},
-                              // onPressed: () async {
-                              //   Navigator.of(context).pop();
-                              //   final response = await http.get(Uri.parse(url));
-                              //   final bytes = response.bodyBytes;
-                              //   await ImageGallerySaver.saveImage(bytes);
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //     SnackBar(
-                              //       content:
-                              //           Text('QRIS image saved to gallery'),
-                              //     ),
-                              //   );
-                              // },
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomePage()));
+                                  }),
                             ),
                           ],
                         ),

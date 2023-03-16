@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:labireen/pages/detail_daftar.dart';
-import 'package:labireen/pages/detail_menu_page.dart';
 import 'package:labireen/pages/login_page.dart';
 import 'package:labireen/widget/sign_up_page/button_login.dart';
 import 'package:labireen/widget/sign_up_page/google_button_login.dart';
@@ -15,6 +14,7 @@ class SignUpPage extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController ulangiPasswordController =
       TextEditingController();
+  final TextEditingController nomorTeleponController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +135,25 @@ class SignUpPage extends StatelessWidget {
                             text: 'Ketik ulang password',
                             textInputType: TextInputType.visiblePassword,
                             obscure: true),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Nomor Telepon",
+                            style: GoogleFonts.poppins(
+                                fontSize: 14, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFieldLogin(
+                            controller: nomorTeleponController,
+                            text: 'Nomor Telepon',
+                            textInputType: TextInputType.phone,
+                            obscure: false),
                         SizedBox(
                           height: 20,
                         ),

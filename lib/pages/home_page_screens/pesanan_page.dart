@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:labireen/widget/home_page/head_page.dart';
 
 import '../../widget/home_page/pesanan_item.dart';
+import '../user_page/user_page.dart';
 
 class PesananPage extends StatefulWidget {
   const PesananPage({super.key});
@@ -28,7 +29,12 @@ class _PesananPageState extends State<PesananPage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 251, 247, 244),
       body: Column(children: [
-        HeadOfThreePage(),
+        GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => UserPage()));
+            },
+            child: HeadOfThreePage()),
         Padding(
           padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
           child: Column(

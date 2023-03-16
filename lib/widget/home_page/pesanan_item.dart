@@ -20,7 +20,7 @@ class PesananItem extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 6),
                   child: Container(
-                    height: 180,
+                    height: 188,
                     width: 361,
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -28,13 +28,13 @@ class PesananItem extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 8, top: 16),
+                          padding: EdgeInsets.only(left: 10, top: 14),
                           child: Row(
                             children: [
                               Text(
                                 'Antrian yang diproses: $antrianPesanan',
                                 style: GoogleFonts.poppins(
-                                    fontSize: 11,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     color: Color.fromARGB(255, 197, 95, 22)),
                               ),
@@ -42,10 +42,10 @@ class PesananItem extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 4,
+                          height: 3,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 8),
+                          padding: EdgeInsets.only(left: 10),
                           child: Row(
                             children: [
                               Text(
@@ -58,14 +58,21 @@ class PesananItem extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 2,
+                        ),
                         Padding(
-                          padding: EdgeInsets.only(top: 86),
-                          child: Text(
-                            'Pesanan telah dikonfirmasi penjual',
-                            style: GoogleFonts.poppins(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: Color.fromARGB(255, 57, 66, 147)),
+                          padding: EdgeInsets.only(left: 10),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Pesanan telah dikonfirmasi penjual',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color.fromARGB(255, 57, 66, 147)),
+                              ),
+                            ],
                           ),
                         )
                       ],
@@ -74,7 +81,7 @@ class PesananItem extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 62,
+                top: 74,
                 left: 8,
                 width: 345,
                 height: 65,
@@ -143,7 +150,7 @@ class PesananItem extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 82,
+                  top: 94,
                   left: 14,
                   width: 32,
                   height: 25,
@@ -162,51 +169,91 @@ class PesananItem extends StatelessWidget {
                     ),
                   )),
               Positioned(
-                  left: 292,
-                  width: 44,
-                  height: 56,
+                left: 292,
+                width: 44,
+                height: 56,
+                child: ClipPath(
+                  clipper: LabelAntriClipper(),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Color.fromARGB(255, 57, 66, 147)),
-                    child: ClipPath(
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(2, 8, 2, 0),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Antrian',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white),
-                                )
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  antrianPesanan,
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white),
-                                )
-                              ],
-                            )
-                          ],
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(2, 8, 2, 0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Antrian',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                antrianPesanan,
+                                style: GoogleFonts.poppins(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                  top: 140,
+                  left: 228,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 197, 95, 22)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18),
                         ),
                       ),
                     ),
-                  )),
+                    onPressed: () {},
+                    child: Text(
+                      'Pesanan diterima',
+                      style: GoogleFonts.poppins(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 248, 250, 252)),
+                    ),
+                  ))
             ],
           ),
         ],
       ),
     );
   }
+}
+
+class LabelAntriClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.moveTo(0, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }

@@ -37,7 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
   introduction_screen: ^3.1.6
-  # image_gallery_saver: ^1.7.1
+  url_launcher: ^6.1.10
+  image_gallery_saver: ^1.7.1
+  dio: ^5.0.2
+  wc_form_validators: ^1.0.0
 
 
 dev_dependencies:
@@ -51,10 +54,16 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.2.18
+  flutter_launcher_icons: ^0.12.0
+
+flutter_icons:
+  image_path: assets/_splash.png
+  android: true
 
 flutter_native_splash :
   color : "#F5F5F5"
   image : assets/_splash.png
+  android_gravity: fill
   
 
 # For information on the generic Dart part of this file, see the

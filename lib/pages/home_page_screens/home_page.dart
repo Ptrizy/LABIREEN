@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:labireen/pages/home_page_screens/menu_page.dart';
 import 'package:labireen/pages/home_page_screens/pesanan_page.dart';
+import 'package:labireen/widget/home_page/page_baru.dart';
 import 'riwayat_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  final screens = [MenuPage(), PesananPage(), RiwayatPage()];
+  final screens = [PageBaru(), PesananPage(), RiwayatPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,10 @@ class _HomePageState extends State<HomePage> {
           unselectedItemColor: Color.fromARGB(255, 203, 213, 225),
           showUnselectedLabels: true,
           fixedColor: Color.fromARGB(255, 197, 95, 22),
+          selectedLabelStyle:
+              GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600),
+          unselectedLabelStyle:
+              GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600),
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.fastfood),

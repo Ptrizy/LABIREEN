@@ -50,6 +50,7 @@ class Notes extends StatelessWidget {
                           children: [
                             Expanded(
                                 child: TextField(
+                              textAlignVertical: TextAlignVertical.top,
                               decoration: InputDecoration(
                                 contentPadding:
                                     EdgeInsets.fromLTRB(22, 16, 22, 102),

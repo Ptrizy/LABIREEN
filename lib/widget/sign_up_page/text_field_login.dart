@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
 
 class TextFieldLogin extends StatelessWidget {
   TextFieldLogin(
@@ -36,6 +37,7 @@ class TextFieldLogin extends StatelessWidget {
           border: InputBorder.none,
           hintText: text,
         ),
+        validator: Validators.required('$text is required'),
       ),
     );
   }

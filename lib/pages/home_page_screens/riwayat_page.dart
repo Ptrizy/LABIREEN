@@ -4,6 +4,7 @@ import 'package:labireen/pages/home_page_screens/home_page.dart';
 import 'package:labireen/widget/home_page/head_page.dart';
 
 import '../../widget/home_page/riwayat_item.dart';
+import '../user_page/user_page.dart';
 
 class RiwayatPage extends StatefulWidget {
   const RiwayatPage({super.key});
@@ -28,7 +29,12 @@ class _RiwayatPageState extends State<RiwayatPage> {
       backgroundColor: Color.fromARGB(255, 251, 247, 244),
       body: Column(
         children: [
-          HeadOfThreePage(),
+          GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UserPage()));
+              },
+              child: HeadOfThreePage()),
           Padding(
             padding: EdgeInsets.fromLTRB(16, 29, 15, 0),
             child: Column(
