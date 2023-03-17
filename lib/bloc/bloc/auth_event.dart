@@ -8,14 +8,12 @@ class RegisterEvent extends AuthEvent {
   String email;
   String password;
   String password_confirm;
-  String phone_number;
 
   RegisterEvent(
       {required this.name,
       required this.email,
       required this.password,
-      required this.password_confirm,
-      required this.phone_number});
+      required this.password_confirm,});
 }
 
 class LoginEvent extends AuthEvent {

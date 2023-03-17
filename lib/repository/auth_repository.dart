@@ -9,10 +9,10 @@ class AuthRepository {
   var _client = http.Client();
 
   Future registerRepository(String name, String email, String password,
-      String password_confirm, String phone_number) async {
+      String password_confirm) async {
     var uri = Uri.parse("$_baseUrl/auth/register");
 
-    print('nama : $name $email $password $password_confirm $phone_number');
+    print('nama : $name $email $password $password_confirm');
     try {
       print('registerrepositry on process');
       var response = await _client.post(uri,
@@ -54,6 +54,7 @@ class AuthRepository {
         var data = json.decode(response.body);
 
         await Cache.writeData(key: 'token_user', value: data['data']);
+        print(data);
 
         return true;
       } else {

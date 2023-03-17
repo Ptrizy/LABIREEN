@@ -3,10 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:labireen/widget/home_page/head_page.dart';
 import 'package:labireen/widget/home_page/menu.dart';
 import 'package:labireen/widget/home_page/tab_menu_page.dart';
-
-import '../../pages/detail_menu_page.dart';
 import '../../pages/user_page/user_page.dart';
-import 'menu_item.dart';
 import 'menu_makanan_list.dart';
 
 class PageBaru extends StatefulWidget {

@@ -161,25 +161,6 @@ class SignUpPage extends StatelessWidget {
                                 textInputType: TextInputType.visiblePassword,
                                 obscure: true),
                             SizedBox(
-                              height: 12,
-                            ),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "Nomor Telepon",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 14, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            TextFieldLogin(
-                                controller: nomorTeleponController,
-                                text: 'Nomor Telepon',
-                                textInputType: TextInputType.phone,
-                                obscure: false),
-                            SizedBox(
                               height: 20,
                             ),
                             ButtonLogin(
@@ -191,8 +172,7 @@ class SignUpPage extends StatelessWidget {
                                     email: emailController.text,
                                     password: passwordController.text,
                                     password_confirm:
-                                        ulangiPasswordController.text,
-                                    phone_number: nomorTeleponController.text));
+                                        ulangiPasswordController.text,));
                               },
                             ),
                             SizedBox(

@@ -16,6 +16,7 @@ class DetailMenu extends StatefulWidget {
 
 class _DetailMenuState extends State<DetailMenu> {
   int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +35,9 @@ class _DetailMenuState extends State<DetailMenu> {
           ),
         ),
         body: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
           child: Column(
-            children: [
-              Container(
+            children: [Container(
                   child: Column(
                 children: [
                   SizedBox(
@@ -204,7 +205,9 @@ class _DetailMenuState extends State<DetailMenu> {
                 ],
               )),
               Container(
-                decoration: BoxDecoration(
+                
+                decoration: 
+                BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -258,12 +261,14 @@ class _DetailMenuState extends State<DetailMenu> {
                         children: [
                           Row(
                             children: [
+                              
                               ElevatedButton(
                                 onPressed: () {
+                                  keranjangMakanan.add(widget.makanan);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ReceiptPage()));
+                                          builder: (context) => ReceiptPage(makanan: widget.makanan,)));
                                 },
                                 style: ButtonStyle(
                                   backgroundColor:

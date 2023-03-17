@@ -23,8 +23,8 @@ class Makanan {
       Makanan('assets/belutcrispy.png', 'Belut Crispy', '250', '14.000'),
       Makanan('assets/ayamcrispy.png', 'Ayam Crispy', '250', '12.000'),
       Makanan('assets/usus.png', 'Usus', '250', '10.000'),
-      Makanan('assets/atiayam.PNG', 'Ati Ayam', '250', '10.000'),
-      Makanan('assets/ayam_lingkar.png', 'Lele Crispy', '250', '12.000'),
+      Makanan('assets/ayam_lingkar.png', 'Ati Ayam', '250', '10.000'),
+      Makanan('assets/belutcrispy.png', 'Lele Crispy', '250', '12.000'),
       Makanan('assets/ayam_lingkar.png', 'Mujaer Crispy', '250', '14.000'),
       Makanan('assets/ayam_lingkar.png', 'Jamur Crispy', '250', '10.000'),
       Makanan('assets/ayam_lingkar.png', 'Telor Crispy', '250', '9.000'),
@@ -115,3 +115,5 @@ class Makanan {
     ];
   }
 }
+
+List<Makanan> keranjangMakanan = [];

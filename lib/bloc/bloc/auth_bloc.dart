@@ -16,13 +16,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         emit(AuthLoading());
         try {
-          print('AuthLoading on process');
           var response = await authRepository.registerRepository(
               event.name,
               event.email,
               event.password,
-              event.password_confirm,
-              event.phone_number);
+              event.password_confirm);
 
           response
               ? emit(RegisterSuccess())
