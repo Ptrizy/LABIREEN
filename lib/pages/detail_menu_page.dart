@@ -15,6 +15,7 @@ class DetailMenu extends StatefulWidget {
 }
 
 class _DetailMenuState extends State<DetailMenu> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,27 +98,39 @@ class _DetailMenuState extends State<DetailMenu> {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.remove_circle,
-                            color: Color.fromARGB(255, 197, 95, 22),
-                            size: 33,
-                          ),
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (counter > 0) {
+                                    counter--;
+                                  }
+                                });
+                              },
+                              icon: Icon(
+                                Icons.remove_circle,
+                                color: Color.fromARGB(255, 197, 95, 22),
+                                size: 33,
+                              )),
                           SizedBox(
                             width: 20,
                           ),
                           Text(
-                            '1',
+                            '$counter',
                             style: GoogleFonts.poppins(
                                 fontSize: 23, fontWeight: FontWeight.w600),
                           ),
                           SizedBox(
                             width: 20,
                           ),
-                          Icon(
-                            Icons.add_circle_rounded,
-                            color: Color.fromARGB(255, 197, 95, 22),
-                            size: 33,
-                          ),
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  counter++;
+                                });
+                              },
+                              icon: Icon(Icons.add_circle_rounded,
+                                  color: Color.fromARGB(255, 197, 95, 22),
+                                  size: 33)),
                         ],
                       )
                     ],

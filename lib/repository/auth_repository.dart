@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import 'cache_repository.dart';
+
 class AuthRepository {
   var _baseUrl = "http://light-herald.at.ply.gg:55353";
   var _client = http.Client();
@@ -35,6 +37,30 @@ class AuthRepository {
       //return response.statusCode == 200 ? true : false;
     } catch (e) {
       print('error di register = ${e.toString()}');
+    }
+  }
+
+   Future loginRepositiory(String email, String password) async {
+    var uri = Uri.parse("$_baseUrl/auth/login");
+
+    try {
+      var response = await _client.post(uri,
+          body: json.encode({
+            'email': email,
+            'password': password,
+          }));
+
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+
+        await Cache.writeData(key: 'token_user', value: data['data']);
+
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      throw (Exception("Error at Login [auth_repository]: ${e.toString()}"));
     }
   }
 }

@@ -37,7 +37,10 @@ class SignUpPage extends StatelessWidget {
       builder: (context, state) {
         if (state is AuthLoading) {
           return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: Center(
+                child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation(
+                        Color.fromARGB(255, 197, 95, 22)))),
           );
         }
         return Scaffold(

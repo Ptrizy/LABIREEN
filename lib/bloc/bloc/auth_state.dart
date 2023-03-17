@@ -14,3 +14,18 @@ class AuthEror extends AuthState {
 }
 
 class AuthLoading extends AuthState {}
+
+class AuthSuccess extends AuthState {}
+
+class Authenticated extends AuthState {}
+
+class Unauthenticated extends AuthState {}
+
+class AuthenticatedError extends AuthState {
+  String error;
+  AuthenticatedError({
+    required this.error,
+  });
+}
+
+class AuthenticatedLoading extends AuthState {}
