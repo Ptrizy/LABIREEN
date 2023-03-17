@@ -1,6 +1,6 @@
-# labireen
+# LABIREEN
 
-A new Flutter project.
+LABIREEN is an acronym of Colaboration and Integration of FILKOM Canteen
 
 ## Getting Started
 
