@@ -13,10 +13,7 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailMenu()));
-      },
+      onTap: () {},
       child: Container(
         height: 500,
         padding: EdgeInsets.only(left: 15, right: 15),

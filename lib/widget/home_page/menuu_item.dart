@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../pages/detail_menu_page.dart';
 import 'makanan.dart';
 
 class MenuuItem extends StatelessWidget {
@@ -11,12 +9,7 @@ class MenuuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailMenu()));
-      },
-      child: Container(
+    return Container(
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Padding(
@@ -82,13 +75,25 @@ class MenuuItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        makanan.harga,
-                        style: GoogleFonts.poppins(
-                            fontSize: 15, fontWeight: FontWeight.w600),
-                      ),
+                      RichText(
+                          text: TextSpan(
+                        children: [
+                          TextSpan(
+                              text: 'Rp ',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13.8,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromARGB(255, 15, 23, 42))),
+                          TextSpan(
+                              text: makanan.harga,
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13.8,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromARGB(255, 15, 23, 42))),
+                        ],
+                      )),
                       SizedBox(
-                        width: 58,
+                        width: 40,
                       ),
                       Icon(
                         Icons.add_circle_rounded,
@@ -102,7 +107,7 @@ class MenuuItem extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

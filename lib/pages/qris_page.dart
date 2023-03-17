@@ -1,13 +1,10 @@
 import 'dart:typed_data';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:labireen/pages/home_page_screens/home_page.dart';
-import 'package:labireen/pages/home_page_screens/pesanan_page.dart';
-// import 'package:image_gallery_saver/image_gallery_saver.dart';.
 
 class QrisPage extends StatefulWidget {
   const QrisPage({super.key, required this.qrCodeData});

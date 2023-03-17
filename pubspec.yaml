@@ -41,6 +41,7 @@ dependencies:
   image_gallery_saver: ^1.7.1
   dio: ^5.0.2
   wc_form_validators: ^1.0.0
+  flutter_bloc: ^8.1.2
 
 
 dev_dependencies:
@@ -55,6 +56,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.2.18
   flutter_launcher_icons: ^0.12.0
+  
 
 flutter_icons:
   image_path: assets/_splash.png

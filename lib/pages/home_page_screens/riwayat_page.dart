@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:labireen/pages/home_page_screens/home_page.dart';
 import 'package:labireen/widget/home_page/head_page.dart';
 
 import '../../widget/home_page/riwayat_item.dart';

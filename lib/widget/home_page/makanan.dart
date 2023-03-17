@@ -9,21 +9,21 @@ class Makanan {
   static List<Makanan> generateBuRidok() {
     return [
       Makanan('assets/tahutelor.png', 'Tahu Telor', '200', '12.000'),
-      Makanan('assets/tahutelor.png', 'Pecel', '200', '10.000'),
-      Makanan('assets/tahutelor.png', 'Tahu Tek', '200', '8.000'),
-      Makanan('assets/tahutelor.png', 'Gado Gado', '200', '12.000'),
-      Makanan('assets/tahutelor.png', 'Rawon', '200', '15.000'),
-      Makanan('assets/tahutelor.png', 'Soto Ayam', '200', '12.000')
+      Makanan('assets/pecel.png', 'Pecel', '200', '10.000'),
+      Makanan('assets/tahutek.png', 'Tahu Tek', '200', '8.000'),
+      Makanan('assets/gadogado.png', 'Gado Gado', '200', '12.000'),
+      Makanan('assets/rawon.png', 'Rawon', '200', '15.000'),
+      Makanan('assets/sotoayam.png', 'Soto Ayam', '200', '12.000')
     ];
   }
 
   static List<Makanan> generateLalapanMbakEli() {
     return [
       Makanan('assets/ayam_lingkar.png', 'Ayam Goreng', '250', '12.000'),
-      Makanan('assets/ayam_lingkar.png', 'Belut Crispy', '250', '14.000'),
-      Makanan('assets/ayam_lingkar.png', 'Ayam Crispy', '250', '12.000'),
-      Makanan('assets/ayam_lingkar.png', 'Usus', '250', '10.000'),
-      Makanan('assets/ayam_lingkar.png', 'Ati Ayam', '250', '10.000'),
+      Makanan('assets/belutcrispy.png', 'Belut Crispy', '250', '14.000'),
+      Makanan('assets/ayamcrispy.png', 'Ayam Crispy', '250', '12.000'),
+      Makanan('assets/usus.png', 'Usus', '250', '10.000'),
+      Makanan('assets/atiayam.PNG', 'Ati Ayam', '250', '10.000'),
       Makanan('assets/ayam_lingkar.png', 'Lele Crispy', '250', '12.000'),
       Makanan('assets/ayam_lingkar.png', 'Mujaer Crispy', '250', '14.000'),
       Makanan('assets/ayam_lingkar.png', 'Jamur Crispy', '250', '10.000'),
@@ -43,33 +43,27 @@ class Makanan {
       ),
       Makanan(
         'assets/miesingle.png',
-        'Mie Goreng Single',
+        'Mie Goreng Double',
+        '100',
+        '10.000',
+      ),
+      Makanan(
+        'assets/miekuah.png',
+        'Mie Kuah Single',
         '100',
         '6.000',
       ),
       Makanan(
-        'assets/miesingle.png',
-        'Mie Goreng Single',
+        'assets/miekuah.png',
+        'Mie Kuah Double',
         '100',
-        '6.000',
+        '10.000',
       ),
       Makanan(
-        'assets/miesingle.png',
-        'Mie Goreng Single',
+        'assets/popmie.png',
+        'Pop Mie',
         '100',
-        '6.000',
-      ),
-      Makanan(
-        'assets/miesingle.png',
-        'Mie Goreng Single',
-        '100',
-        '6.000',
-      ),
-      Makanan(
-        'assets/miesingle.png',
-        'Mie Goreng Single',
-        '100',
-        '6.000',
+        '8.000',
       )
     ];
   }
@@ -83,35 +77,41 @@ class Makanan {
         '12.000',
       ),
       Makanan(
-        'assets/nasisayurtempe.png',
-        'Nasi Sayur Tempe',
+        'assets/nasisayurayam.png',
+        'Nasi Sayur Ayam',
         '200',
         '12.000',
       ),
       Makanan(
-        'assets/nasisayurtempe.png',
-        'Nasi Sayur Tempe',
+        'assets/nasisayurikan.png',
+        'Nasi Sayur Ikan',
+        '200',
+        '14.000',
+      ),
+      Makanan(
+        'assets/nasisayurtelor.png',
+        'Nasi Sayur Telor',
+        '200',
+        '10.000',
+      ),
+      Makanan(
+        'assets/nasisayurjamur.png',
+        'Nasi Sayur Jamur',
         '200',
         '12.000',
       ),
       Makanan(
-        'assets/nasisayurtempe.png',
-        'Nasi Sayur Tempe',
+        'assets/nasisayurparu.png',
+        'Nasi Sayur Paru',
         '200',
         '12.000',
       ),
       Makanan(
-        'assets/nasisayurtempe.png',
-        'Nasi Sayur Tempe',
+        'assets/nasisayurusus.png',
+        'Nasi Sayur Usus',
         '200',
-        '12.000',
+        '14.000',
       ),
-      Makanan(
-        'assets/nasisayurtempe.png',
-        'Nasi Sayur Tempe',
-        '200',
-        '12.000',
-      )
     ];
   }
 }

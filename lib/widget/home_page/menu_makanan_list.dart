@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:labireen/widget/home_page/menuu_item.dart';
+import 'package:labireen/pages/detail_menu_page.dart';
 
 import 'menu.dart';
+import 'menuu_item.dart';
 
 class MenuMakananList extends StatelessWidget {
   const MenuMakananList({
@@ -34,8 +35,15 @@ class MenuMakananList extends StatelessWidget {
                     childAspectRatio: 0.708,
                   ),
                   padding: EdgeInsets.zero,
-                  itemBuilder: (context, index) => MenuuItem(
-                    makanan: menu.kategori[e]![index],
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: ((context) =>
+                              DetailMenu(makanan: menu.kategori[e]![index]))));
+                    },
+                    child: MenuuItem(
+                      makanan: menu.kategori[e]![index],
+                    ),
                   ),
                   itemCount: menu.kategori[e]!.length,
                 ))

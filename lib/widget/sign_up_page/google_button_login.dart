@@ -22,8 +22,12 @@ class ButtonGoogle extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset('assets/Google.png'),
-          SizedBox(width: 49), // add space between Image and Text
+          Image.asset(
+            'assets/google.png',
+            width: 32,
+            height: 32,
+          ),
+          SizedBox(width: 54), // add space between Image and Text
           Text(
             'Lanjutkan dengan Google',
             style: GoogleFonts.poppins(
